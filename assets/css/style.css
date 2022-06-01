@@ -1,0 +1,268 @@
+* {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    color: #102D59;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.blue-text {
+    color: #102D59 !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.gray-bg {
+    background-color: #FAFAFA !important;
+}
+
+.white-bg {
+    background-color: white !important;
+}
+
+.btn-blue {
+    background-color: #102D59 !important;
+    color: white !important;
+}
+
+.btn-blue:hover {
+    background-color: #0A244D !important;
+}
+
+.blue-alpha-bg {
+    background-color: rgba(16, 45, 89, 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+.padd-150 {
+    padding: 0 150px 0 150px !important;
+}
+
+.padd-200 {
+    padding: 0 200px 0 200px !important;
+}
+
+.font-12 {
+    font-size: 12px !important;
+}
+
+.bb-1-gray {
+    border-bottom: 1px solid #D8D8D8 !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.main-body {
+    padding: 50px 200px 50px 200px !important;
+    background-color: #F3F3F3;
+}
+
+.main-body h1, .main-body h2 {
+    color: #102D59;
+}
+
+#header {
+    background-color: white;
+    padding: 15px 200px 15px 200px;
+    color: #102D59;
+    z-index: 1;
+}
+
+#header-logo {
+    margin: auto;
+}
+
+#header a {
+    color: #102D59 !important;
+    text-decoration: none;
+}
+
+#website-name {
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    border-left: 2px solid #102D59;
+}
+
+.navbar-nav > li{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#footer {
+    color: white !important;
+}
+
+#footer-top {
+    background-color: #102D59;
+    padding: 15px 200px 15px 200px;
+}
+
+#footer .table {
+    margin-top: 10px;
+    font-size: 12px;
+    border: 1px solid;
+    text-align: center;
+}
+
+#footer .table td {
+    border: 1px solid white;
+    padding: 10px 0 10px 0;
+    color: white !important;
+}
+
+#footer .table .nama-prodi {
+    border: 1px solid white;
+    padding: 5px 0 5px 0;
+}
+
+#footer .table .tenggat {
+    width: 75%;
+    font-size: 14px;
+}
+
+#footer .table .akreditasi {
+    width: 25%;
+    font-size: 36px;
+}
+
+#footer .link-a {
+    text-transform: uppercase;
+    color: #FE7D15;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+#footer-bot {
+    background-color: #0A244D;
+    padding: 10px 200px 10px 200px;
+}
+
+.footer-top-header {
+    font-weight: 600;
+}
+
+#sidenav{
+    padding: 50px 35px 0 35px;
+}
+
+.sidenav-header {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px 0 10px 0;
+}
+
+.sidenav-body-list {
+    padding: 15px 0 15px 0;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+#landing-page-banner {
+    z-index: -1;
+}
+
+#landing-page-title-wrapper {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+    height: 720px;
+    padding: 0 200px 0 200px;
+}
+
+.landing-page-title {
+    width: 100%;
+}
+
+#title-text {
+    background-color: rgba(16, 45, 89, 0.75);
+    width: 60%;
+    color: white;
+    font-weight: bold;
+    padding: 25px;
+    font-size: 32px;
+}
+
+#title-see-more {
+    background-color: white;
+    width: fit-content;
+    padding: 10px 35px 10px 35px;
+    margin-top: 15px;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 5px solid #FE7D15;
+    cursor: pointer;
+}
+
+.highlight-detail {
+    padding: 50px !important;
+}
+
+#highlight-btn {
+    background-color: white;
+    width: fit-content;
+    padding: 10px 35px 10px 35px;
+    background-color: #0A244D;
+    color: white;
+}
+
+#pagination-btn {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.page-btn {
+    width: 100px;
+}
+
+#kontak-body {
+    width: 300px;
+}
+
+.table-kurikulum {
+    border: 1px solid #0A244D !important;
+}
+
+#col-id {
+    width: 50px;
+}
+
+#col-nama {
+    width: 250px;
+}
+
+#col-sks {
+    width: 100px;
+}
+
+.landing-page-news {
+    height: 250px;
+}
+
+.lp-read-more {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 40px;
+}
+
+.join-partner {
+    width:100%;
+    text-align: center;
+    margin-bottom: 25px;
+}
