@@ -51,7 +51,8 @@ const ProfilDosen = ({profil}) => {
 
 export async function getServerSideProps() {
     const profilTendiks = await fetchAPI("/profil-dosens", {
-        populate: "*"
+        populate: "*",
+        sort: ['nama:desc'],
     });
 
     return {
