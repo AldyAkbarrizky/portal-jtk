@@ -12,6 +12,10 @@
     color: #102D59 !important;
 }
 
+.dark-gray-text {
+    color: #4A4A4A !important;
+}
+
 .text-center {
     text-align: center;
 }
@@ -53,6 +57,10 @@
 
 .bb-1-gray {
     border-bottom: 1px solid #D8D8D8 !important;
+}
+
+.curs-point {
+    cursor: pointer !important;
 }
 
 a {

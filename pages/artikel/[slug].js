@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Footer from '../components/footer';
-import Header from '../components/header';
-import { fetchAPI } from "../lib/api";
-import { fetcher } from '../lib/api_fetcher';
-import { getStrapiMedia } from '../lib/media';
+import styles from '../../styles/Home.module.css'
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import { fetchAPI } from "../../lib/api";
+import { fetcher } from '../../lib/api_fetcher';
+import { getStrapiMedia } from '../../lib/media';
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -17,40 +17,23 @@ const Artikel = ({artikel, latest, kategori}) => {
         <div className='container-fluid main-body' id='artikel-main'>
             <div className='row'>
                 <div className='col-8'>
+                    <div className='fw-bold mb-2'><Link href='/artikel'><a>&larr; Kembali ke daftar artikel</a></Link></div>
                     <h3 className='fw-bold'>Berita Seputar JTK Polban</h3>
-                    {artikel.data.map((data, i) => {
-                        return (
-                            <div key={data.id} className="card mt-4 mb-4">
-                                <Image
-                                    src={getStrapiMedia(data.attributes.banner_konten)}
-                                    width={1920}
-                                    height={1080}
-                                    layout='intrinsic'
-                                    alt="Banner Artikel"
-                                />
-                                <div className="card-body p-5">
-                                    <h4 className='fw-bold'>{data.attributes.judul_konten}</h4>
-                                    <ReactMarkdown className='my-4'>
-                                        {data.attributes.body_excerpt}
-                                    </ReactMarkdown>
-                                    <Link href={`/artikel/${data.attributes.slug_artikel}`}><button type="button" className="btn btn-blue">Baca Selengkapnya</button></Link>
-                                </div>
-
-                            </div>
-                        );
-                    })}
-                    {/* <div id='pagination-btn'>
-                        <button
-                          className="btn btn-blue me-2 page-btn"
-                          disabled={artikel.meta.pagination.page === 1}>
-                            Previous
-                        </button>
-                        <button
-                          className="btn btn-blue me-2 page-btn"
-                          disabled={artikel.meta.pagination.page === artikel.meta.pagination.pageCount}>
-                            Next
-                        </button>
-                    </div> */}
+                    <div className="card mt-4 mb-4">
+                        <Image
+                            src={getStrapiMedia(artikel.attributes.banner_konten)}
+                            width={1920}
+                            height={1080}
+                            layout='intrinsic'
+                            alt="Banner Artikel"
+                        />
+                        <div className="card-body p-5">
+                             <h4 className='fw-bold'>{artikel.attributes.judul_konten}</h4>
+                            <ReactMarkdown className='my-4'>
+                                {artikel.attributes.body_konten}
+                            </ReactMarkdown>
+                        </div>
+                    </div>
                 </div>
                 <div className='col-4'>
                     <div className='artikel-sideNav mt-5 ms-3'>
@@ -69,11 +52,9 @@ const Artikel = ({artikel, latest, kategori}) => {
                                                 alt="Banner Artikel"
                                             />
                                             </div>
-                                            <Link href={`/artikel/${data.attributes.slug_artikel}`}>
-                                                <div className='col-9 curs-point'>
-                                                    <span className='font-12'>{data.attributes.judul_konten}</span>
-                                                </div>
-                                            </Link>
+                                            <div className='col-9'>
+                                                <span className='font-12'>{data.attributes.judul_konten}</span>
+                                            </div>
                                         </div>
                                     )
                                 })}
@@ -100,11 +81,15 @@ const Artikel = ({artikel, latest, kategori}) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps( context ) {
     const artikel = await fetchAPI("/beritas", {
         populate: "*",
-        sort: ['createdAt:desc']
+        filters: {
+            slug_artikel: context.params.slug
+        }
     });
+
+    console.log(artikel);
 
     const latestArtikel = await fetchAPI("/beritas", {
         populate: "*",
@@ -120,7 +105,7 @@ export async function getServerSideProps() {
     });
 
     return {
-        props: {artikel: artikel, latest: latestArtikel, kategori: kategori}
+        props: {artikel: artikel.data[0], latest: latestArtikel, kategori: kategori}
     }
 }
 

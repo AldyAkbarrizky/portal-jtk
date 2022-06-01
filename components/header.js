@@ -13,7 +13,7 @@ const Header = () => {
                             <div className="col-2 pt-1 ps-4" id="header-logo">
                                 <Image
                                     alt="Logo Polban"
-                                    src="/Logo Polban.png"
+                                    src={`https://res.cloudinary.com/web-jtk/image/upload/v1654094631/thumbnail_Logo_polban_52aa90512a.png`}
                                     width={30}
                                     height={40}
                                 />

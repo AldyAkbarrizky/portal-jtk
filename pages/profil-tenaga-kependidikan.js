@@ -17,7 +17,7 @@ const ProfilTendik = ({profil}) => {
                     <div className='row'>
                         {profil.map((data, i) => {
                             return (
-                                <div key={data.attributes.id} className='col-4'>
+                                <div key={data.id} className='col-4'>
                                     <div className="card mt-4 mb-4">
                                         <Image
                                             src={getStrapiMedia(data.attributes.profile_picture)}

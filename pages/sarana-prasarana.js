@@ -18,7 +18,7 @@ const SaranaPrasarana = ({fasilitas}) => {
                     <div className='row'>
                         {fasilitas.map((data, i) => {
                             return(
-                                <div key={data.attributes.id} className='col-6'>
+                                <div key={data.id} className='col-6'>
                                     <Image
                                         className='mt-3'
                                         src={getStrapiMedia(data.attributes.gambar_fasilitas)}

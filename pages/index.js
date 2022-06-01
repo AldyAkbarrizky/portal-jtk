@@ -39,7 +39,7 @@ const Home = ({landingPage, news, partnership, kontak}) => {
           <div className='row'>
             {news.map((data, i) => {
               return(
-                <div key={data.attributes.id} className='col-4'>
+                <div key={data.id} className='col-4'>
                   <div className="card mt-4 mb-4">
                     <Image
                       src={getStrapiMedia(data.attributes.banner_konten)}
@@ -65,7 +65,7 @@ const Home = ({landingPage, news, partnership, kontak}) => {
           <div className='row'>
             {partnership.map((data, i) => {
               return(
-                <div key={data.attributes.id} className='col-3 mx-auto mb-5'>
+                <div key={data.id} className='col-3 mx-auto mb-5'>
                   <Image
                       src={getStrapiMedia(data.attributes.logo_perusahaan)}
                       width={480}

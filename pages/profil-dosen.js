@@ -5,6 +5,7 @@ import SideNav  from '../components/sidenav';
 import { fetchAPI } from "../lib/api";
 import { getStrapiMedia } from '../lib/media';
 import ReactMarkdown from 'react-markdown';
+import Link from 'next/link';
 
 const ProfilDosen = ({profil}) => {
     console.log(profil)
@@ -17,8 +18,9 @@ const ProfilDosen = ({profil}) => {
                     <div className='row'>
                         {profil.map((data, i) => {
                             return (
-                                <div key={data.attributes.id} className='col-4'>
-                                    <div className="card mt-4 mb-4">
+                                <div key={data.id} className='col-4'>
+                                    <Link href={`/profil-dosen/${data.id}`}>
+                                    <div className="card mt-4 mb-4 curs-point">
                                         <Image
                                             src={getStrapiMedia(data.attributes.profile_picture)}
                                             width={1080}
@@ -31,6 +33,7 @@ const ProfilDosen = ({profil}) => {
                                             <span>{data.attributes.email}</span>
                                         </div>
                                     </div>
+                                    </Link>
                                 </div>
                             );
                         })}

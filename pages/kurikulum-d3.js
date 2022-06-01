@@ -38,7 +38,7 @@ const KurikulumD3 = ({kurikulum}) => {
                         <tbody>
                             {kurikulum[0].attributes.mata_kuliahs.data.map((data, i) => {
                                 return(
-                                    <tr key={data.attributes.id}>
+                                    <tr key={data.id}>
                                         <td className='text-center'>{i + 1}</td>
                                         <td>{data.attributes.nama_matkul}</td>
                                         <td>{data.attributes.deskripsi_matkul}</td>
